@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Portfolio of YourName, an Electronics Engineer and Tech Enthusiast specializing in embedded systems, drones, and robotics." />
+    <meta name="keywords" content="electronics, embedded systems, drones, robotics, portfolio, YourName" />
+    <meta name="author" content="YourName" />
+    <title>MANOJ M | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <!-- Stars Background -->
+    <div class="stars-container"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 left-0 z-50" aria-label="Main navigation">
+      <div class="container mx-auto px-4 py-3 sm:py-4 md:py-6 flex justify-between items-center">
+        <h1 class="text-yellow-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider">MANOJ M</h1>
+        <button class="md:hidden text-yellow-300 focus:outline-none" id="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+        <div class="hidden md:flex space-x-6 lg:space-x-8 text-yellow-300" id="nav-links">
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#projects" class="hover:underline">Projects</a>
+          <a href="#skills" class="hover:underline">Skills</a>
+          <a href="#resume" class="hover:underline">Resume</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div class="hidden md:hidden bg-black w-full absolute top-12 sm:top-16 left-0" id="mobile-menu">
+        <div class="flex flex-col items-center space-y-4 py-4 text-yellow-300">
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#projects" class="hover:underline">Projects</a>
+          <a href="#skills" class="hover:underline">Skills</a>
+          <a href="#resume" class="hover:underline">Resume</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center items-center text-center relative" id="hero">
+      <canvas id="circuit-canvas" class="absolute inset-0 -z-5"></canvas>
+      <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow-400 font-bold mb-4 animate-fade-in">Hi, I’m MANOJ M</h2>
+      <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-yellow-200 mb-8 animate-fade-in-delay">Electronics Engineer | Coder | Tech Enthusiast</p>
+      <a href="#projects" class="bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay">View My Work</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-black text-white">
+      <div class="container mx-auto">
+        <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-4">About Me</h3>
+        <p class="max-w-2xl sm:max-w-3xl lg:max-w-4xl text-yellow-100 leading-relaxed text-sm sm:text-base">
+          I’m an Electronics & Communication Engineering student passionate about embedded systems, drones, robotics, and software development. My mission is to create innovative tech solutions that solve real-world problems. When I’m not coding or tinkering with circuits, you’ll find me exploring the latest advancements in AI and IoT.
+        </p>
+      </div>
+    </section>
+
+   <!-- Projects Section -->
+<section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-gray-900 text-white">
+  <div class="container mx-auto">
+    <h3 class="text-2xl sm:text-3xl text-yellow-400 font-bold mb-6">Projects</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+
+      <!-- Project 1 -->
+      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://www.shutterstock.com/image-vector/abstract-brain-wave-concept-on-260nw-303790283.jpg');"></div>
+        <div class="relative p-6">
+          <h4 class="text-lg sm:text-xl font-bold mb-2">BCI-Controlled Car Game</h4>
+          <p class="text-sm mb-4">A brain-computer interface (BCI) game using EEG sensor data to control a car based on user focus and mental activity. Blends neurotechnology and real-time gaming for an innovative interactive experience.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDMlzEUaPr1Kjf8E7xpJlOqEdL2oWANm3Jqw&s');"></div>
+        <div class="relative p-6">
+          <h4 class="text-lg sm:text-xl font-bold mb-2">Yellow Shade Plant Disease Detection</h4>
+          <p class="text-sm mb-4">Real-time plant health monitoring tool using HSV color filtering to detect yellow pigmentation. Built with OpenCV and Python, it identifies early signs of nutrient deficiencies via webcam feed.</p>
+          <a href="https://github.com/buildbymanoj/Yellow-Shade-Based-Plant-Disease-Detection-using-OpenCV" target="_blank" class="hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_tU92mwVVesrOh-Y-138x6APbWtkNoUwAvA&s');"></div>
+        <div class="relative p-6">
+          <h4 class="text-lg sm:text-xl font-bold mb-2">Automatic Irrigation System</h4>
+          <p class="text-sm mb-4">Smart water-saving solution using Arduino Uno to monitor soil moisture and automate irrigation. Reduces water waste and improves crop health with real-time sensor data.</p>
+          <a href="https://github.com/buildbymanoj/Automatic_Irrigation_System_Using_Arduino" target="_blank" class="hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq9qBhBZ91JbylVzvBIuhqbTO1_dX6aQcWw&s');"></div>
+        <div class="relative p-6">
+          <h4 class="text-lg sm:text-xl font-bold mb-2">Custom 3D Parts for Rescue Drone</h4>
+          <p class="text-sm mb-4">Designed and 3D-printed modular drone components optimized for disaster rescue missions. Built for TechnoXian 2024, this project enhances drone durability, payload handling, and field adaptability.</p>
+          <a href="https://github.com/buildbymanoj/3D-parts-For-Rescue-Drone" target="_blank" class="hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShUwgvnrIpvqnjoQdUSJtlte9WNce1I-MEoQ&s');"></div>
+        <div class="relative p-6">
+          <h4 class="text-lg sm:text-xl text-yellow-300 mb-2">Autonomous Fire-Fighting Robot</h4>
+          <p class="text-sm text-yellow-100 mb-4">An Arduino Uno–powered robot that detects fire using flame sensors and autonomously navigates to extinguish it. Designed for rapid response in indoor fire hazards and small-scale emergencies.</p>
+          <a href="https://github.com/buildbymanoj/Fire-Detection-and-Extinguishing-Robot-using-Arduino" target="_blank" class="text-yellow-400 hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="relative p-6">
+          <h4 class="text-lg sm:text-xl text-yellow-300 mb-2">Personal Portfolio Website</h4>
+          <p class="text-sm text-yellow-100 mb-4">A modern, responsive web portfolio highlighting personal projects, skills, and achievements. Built to showcase engineering innovation and hands-on technical work with a clean and engaging layout.</p>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="relative p-6">
+          <h4 class="text-lg sm:text-xl text-yellow-300 mb-2">🤖 BuildbyManoj-chatbot | AI Assistant with RAG</h4>
+          <p class="text-sm text-yellow-100 mb-4">Flask-powered AI assistant with live web search for real-time, context-aware answers. Tech Stack: Python, Flask, Web Scraping, Render</p>
+          <div class="flex space-x-4">
+            <a href="https://buildbymanoj-chatbot.onrender.com/" target="_blank" class="text-yellow-400 hover:underline flex items-center">
+              <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+            </a>
+            <a href="https://github.com/buildbymanoj/BuildbyManoj-chatbot" target="_blank" class="text-yellow-400 hover:underline flex items-center">
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="relative p-6">
+          <h4 class="text-lg sm:text-xl font-bold mb-2">🥗 NutritionTracker | Full-Stack Web App</h4>
+          <p class="text-sm mb-4">MERN stack app for tracking and analyzing daily nutrition. Tech Stack: MongoDB, Express.js, React, Node.js, HTML/CSS</p>
+          <a href="https://github.com/buildbymanoj/Nutrify" target="_blank" class="hover:underline flex items-center">
+            <i class="fab fa-github mr-2"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Skills Section -->
+<section id="skills" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-black text-white">
+  <div class="container mx-auto">
+    <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-6">Skills</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      <!-- Programming -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">Programming</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-code text-yellow-400 mr-2"></i>
+            <span>C</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-java text-yellow-400 mr-2"></i>
+            <span>Java</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-python text-yellow-400 mr-2"></i>
+            <span>Python</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tools -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">Tools</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fab fa-github text-yellow-400 mr-2"></i>
+            <span>Git & GitHub</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-code text-yellow-400 mr-2"></i>
+            <span>VS Code</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-flask text-yellow-400 mr-2"></i>
+            <span>Google Colab</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-file-alt text-yellow-400 mr-2"></i>
+            <span>MS Office (Excel, Word, PowerPoint)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- AI/ML -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">AI/ML</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-eye text-yellow-400 mr-2"></i>
+            <span>OpenCV</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-robot text-yellow-400 mr-2"></i>
+            <span>Teachable Machine</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Robotics -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">Robotics</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-helicopter text-yellow-400 mr-2"></i>
+            <span>Drone Building & Piloting</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-satellite-dish text-yellow-400 mr-2"></i>
+            <span>QGC</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-route text-yellow-400 mr-2"></i>
+            <span>Mission Planner</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Designing -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">Designing</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-microchip text-yellow-400 mr-2"></i>
+            <span>PCB Design (KiCad)</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-cube text-yellow-400 mr-2"></i>
+            <span>3D Modeling (Fusion 360)</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-palette text-yellow-400 mr-2"></i>
+            <span>Canva</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Hardware -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">Hardware</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-microchip text-yellow-400 mr-2"></i>
+            <span>Arduino</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-wifi text-yellow-400 mr-2"></i>
+            <span>ESP32</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-microchip text-yellow-400 mr-2"></i>
+            <span>MSP430</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-microchip text-yellow-400 mr-2"></i>
+            <span>Raspberry Pi</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">Soft Skills</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-users text-yellow-400 mr-2"></i>
+            <span>Teamwork</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-sync-alt text-yellow-400 mr-2"></i>
+            <span>Adaptability</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-brain text-yellow-400 mr-2"></i>
+            <span>Quick Learner</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Electronics -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">Electronics</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-bolt text-yellow-400 mr-2"></i>
+            <span>Circuit Theory</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-memory text-yellow-400 mr-2"></i>
+            <span>Digital Electronics</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-wave-square text-yellow-400 mr-2"></i>
+            <span>Analog Electronics</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Web Development -->
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <h4 class="text-lg text-yellow-300 mb-3">Web Development</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fab fa-react text-yellow-400 mr-2"></i>
+            <span>React</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-database text-yellow-400 mr-2"></i>
+            <span>MongoDB</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-server text-yellow-400 mr-2"></i>
+            <span>Express.js</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-node-js text-yellow-400 mr-2"></i>
+            <span>Node.js</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-js text-yellow-400 mr-2"></i>
+            <span>JavaScript</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-html5 text-yellow-400 mr-2"></i>
+            <span>HTML</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-css3-alt text-yellow-400 mr-2"></i>
+            <span>CSS</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Resume -->
+
+    <section id="resume" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-gray-900 text-white text-center">
+      <div class="container mx-auto">
+        <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-4">Resume</h3>
+        <p class="mb-4 text-yellow-100 text-sm sm:text-base">Download my latest resume in PDF format.</p>
+        <a href="assets/resume_MANOJ_M.pdf" class="bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition" download>Download Resume</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-black text-white text-center relative">
+      <canvas id="microchip-canvas" class="absolute inset-0 -z-5"></canvas>
+      <div class="container mx-auto relative z-10">
+        <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-4">Contact Me</h3>
+        <p class="mb-4 text-yellow-100 text-sm sm:text-base">Let’s connect! Drop me a message below.</p>
+        <form action="https://formspree.io/f/mblyzapv" method="POST" class="max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
+          <div class="mb-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              class="w-full p-3 bg-gray-800 text-yellow-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
+          </div>
+          <div class="mb-4">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              class="w-full p-3 bg-gray-800 text-yellow-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
+          </div>
+          <div class="mb-4">
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+              class="w-full p-3 bg-gray-800 text-yellow-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              rows="5"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition"
+          >
+            Send Message
+          </button>
+        </form>
+        <div class="flex justify-center space-x-4 sm:space-x-6 mt-6">
+          <a href="https://www.linkedin.com/in/manoj-m-53621829a/" target="_blank" aria-label="LinkedIn" class="text-yellow-300 hover:text-yellow-400"><i class="fab fa-linkedin fa-2x"></i></a>
+          <a href="https://github.com/buildbymanoj" target="_blank" aria-label="GitHub" class="text-yellow-300 hover:text-yellow-400"><i class="fab fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-yellow-300 py-4 sm:py-6 bg-black">
+      <div class="container mx-auto">
+        <p>© 2025 MANOJ M. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

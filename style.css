@@ -1,0 +1,394 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1600px;
+    padding: 0 3rem;
+  }
+}
+
+/* Stars Background */
+.stars-container {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+}
+
+.star {
+  position: absolute;
+  background: #facc15;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+  will-change: opacity, transform; /* Performance optimization */
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Reduce animation on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
+/* 3D Canvases */
+#circuit-canvas,
+#microchip-canvas {
+  opacity: 0.3;
+  pointer-events: none;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+#drone-canvas {
+  pointer-events: none;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Hide heavy animations on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  #circuit-canvas,
+  #microchip-canvas,
+  #drone-canvas {
+    display: none;
+  }
+}
+
+/* Navigation */
+nav {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #facc15;
+  text-decoration: none;
+}
+
+/* Hero Section */
+#hero {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  position: relative;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 1s ease-out 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section Styles */
+section {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  min-height: 50vh;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  width: 100%;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optimize section animations for mobile */
+@media (max-width: 768px) {
+  section {
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+}
+
+/* Projects */
+#projects .grid > div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+#projects .grid > div:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced Project Text */
+#projects h4 {
+  font-weight: 700;
+  color: #ffdd33; /* Brighter yellow */
+  text-shadow: 0 0 8px rgba(255, 221, 51, 0.3);
+}
+
+#projects p {
+  color: #ffffff; /* Pure white for better contrast */
+  font-weight: 500;
+}
+
+#projects a {
+  font-weight: 600;
+  color: #ffe066; /* Bright but softer yellow */
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+#projects a:hover {
+  color: #fff7cc;
+  text-shadow: 0 0 8px rgba(255, 221, 51, 0.5);
+}
+
+/* Skills */
+#skills .bg-gray-800 {
+  transition: all 0.3s ease;
+}
+
+#skills .bg-gray-800:hover {
+  background-color: #374151; /* bg-gray-700 */
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styles */
+form input,
+form textarea {
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #facc15;
+}
+
+form button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #aaa;
+  opacity: 0.8;
+}
+
+form input:focus::placeholder,
+form textarea:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* Resume & Contact */
+#resume a, #contact a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #444;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6b800;
+}
+
+/* Responsive scrollbar for mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 2.5rem;
+  }
+
+  #hero p {
+    font-size: 1.25rem;
+  }
+
+  section {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  #skills .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #drone-canvas {
+    display: none; /* Hide drone canvas on small screens for performance */
+  }
+  
+  .stars-container .star {
+    opacity: 0.7; /* Reduce star intensity on mobile */
+  }
+  
+  form input, form textarea {
+    font-size: 16px; /* Prevent zoom on input focus on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  section {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  #projects .relative {
+    padding: 0.75rem;
+  }
+
+  #skills .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav h1 {
+    font-size: 1.125rem; /* text-lg */
+  }
+
+  #mobile-menu {
+    top: 2.5rem; /* adjust for smaller nav padding */
+  }
+  
+  /* Improve small screen form elements */
+  form button, form input, form textarea {
+    width: 100%;
+  }
+  
+  /* Better spacing for project cards */
+  #projects .grid {
+    gap: 1rem;
+  }
+  
+  /* Improve footer on small screens */
+  footer {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero h2 {
+    font-size: 5rem;
+  }
+
+  #hero p {
+    font-size: 2rem;
+  }
+
+  section {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #hero h2 {
+    font-size: 6rem;
+  }
+
+  #hero p {
+    font-size: 2.5rem;
+  }
+
+  section {
+    padding-top: 140px;
+    padding-bottom: 120px;
+  }
+}
