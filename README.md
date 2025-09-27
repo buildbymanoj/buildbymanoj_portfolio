@@ -2,7 +2,6 @@
 
 Welcome to my personal portfolio website repository. This project showcases my skills, projects, and background in electronics engineering and software development.
 
-![Portfolio Screenshot](https://user-images.githubusercontent.com/placeholder-for-your-image.jpg)
 
 ## 🌟 Features
 
