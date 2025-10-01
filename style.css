@@ -285,8 +285,8 @@ section.visible {
 #skills .bg-gray-800:hover {
   background-color: #374151;
   /* bg-gray-700 */
-  transform: scale(1.05) translateX(-20px) translateY(-30px)  ;
-  box-shadow: 0 15px 30px rgb(238, 255, 0);
+  transform: scale(1.05) translateX(-15px) translateY(-25px)  ;
+  box-shadow: 0 15px 30px rgb(141, 151, 5);
 }
 
 /* Form Styles */
@@ -474,5 +474,78 @@ footer {
   section {
     padding-top: 140px;
     padding-bottom: 120px;
+  }
+}
+
+/* Logos Slideshow */
+.logos-slideshow {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  padding: 40px 0;
+  position: relative;
+  margin-top: 10px;
+}
+
+.logos {
+  display: flex;
+  position: relative;
+  animation: slide 15s linear infinite;
+}
+
+.logos:hover {
+  animation-play-state: paused;
+}
+
+.logos i, .logos img {
+  font-size: 60px;
+  margin: 0 40px;
+  color: #fbbf24;
+  transition: transform 0.3s, text-shadow 0.3s, filter 0.3s;
+  position: relative;
+}
+
+.logos img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  font-size: initial;
+}
+
+.logos i:hover, .logos img:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px #fbbf24, 0 0 40px #fbbf24, 0 0 60px #fbbf24;
+  filter: drop-shadow(0 0 20px #fbbf24) drop-shadow(0 0 40px #fbbf24);
+}
+
+.logos i::after, .logos img::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fbbf24;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.logos i:hover::after, .logos img:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-70%);
   }
 }
