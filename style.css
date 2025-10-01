@@ -493,9 +493,9 @@ footer {
   animation: slide 15s linear infinite;
 }
 
-.logos:hover {
+/* .logos:hover {
   animation-play-state: paused;
-}
+} */
 
 .logos i, .logos img {
   font-size: 60px;
