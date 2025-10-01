@@ -58,17 +58,30 @@
     <section class="h-screen flex flex-col justify-center items-center text-center relative" id="hero">
       <canvas id="circuit-canvas" class="absolute inset-0 -z-5"></canvas>
       <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow-400 font-bold mb-4 animate-fade-in">Hi, I’m MANOJ M</h2>
-      <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-yellow-200 mb-8 animate-fade-in-delay">Electronics Engineer | Coder | Tech Enthusiast</p>
+      <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-yellow-200 mb-8 animate-fade-in-delay">MERN Developer | Coder | Electronics Engineer </p>
       <a href="#projects" class="bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay">View My Work</a>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-black text-white">
-      <div class="container mx-auto">
-        <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-4">About Me</h3>
-        <p class="max-w-2xl sm:max-w-3xl lg:max-w-4xl text-yellow-100 leading-relaxed text-sm sm:text-base">
-          I’m an Electronics & Communication Engineering student passionate about embedded systems, drones, robotics, and software development. My mission is to create innovative tech solutions that solve real-world problems. When I’m not coding or tinkering with circuits, you’ll find me exploring the latest advancements in AI and IoT.
-        </p>
+      <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <!-- Custom Profile Card for Image -->
+        <div class="card">
+          <div class="image">
+            <img src="./assets/MANOJ.jpg" alt="Profile Image" />
+          </div>
+          <div class="content">
+      <h3>Hi! 👋</h3>
+      <p>I'm Manoj, an ECE student who loves tech, coding, and building things.<br></p>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});" style="margin-top:12px; background:#facc15; color:#111; border:none; border-radius:8px; padding:8px 18px; font-weight:600; cursor:pointer; transition:background 0.2s;">Contact Me</button>
+          </div>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-4">About Me</h3>
+          <p class="max-w-2xl sm:max-w-3xl lg:max-w-4xl text-yellow-100 leading-relaxed text-sm sm:text-base">
+            I’m an Electronics & Communication Engineering student passionate about embedded systems, drones, robotics, and software development. My mission is to create innovative tech solutions that solve real-world problems. When I’m not coding or tinkering with circuits, you’ll find me exploring the latest advancements in AI and IoT.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -76,7 +89,7 @@
 <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-gray-900 text-white">
   <div class="container mx-auto">
     <h3 class="text-2xl sm:text-3xl text-yellow-400 font-bold mb-6">Projects</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+    <div class="grid grid-cols-2 gap-4 sm:gap-6">
 
       <!-- Project 1 -->
       <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
@@ -100,7 +113,7 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+      <!-- <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
         <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_tU92mwVVesrOh-Y-138x6APbWtkNoUwAvA&s');"></div>
         <div class="relative p-6">
           <h4 class="text-lg sm:text-xl font-bold mb-2">Automatic Irrigation System</h4>
@@ -109,10 +122,10 @@
             <i class="fab fa-github mr-2"></i> View on GitHub
           </a>
         </div>
-      </div>
+      </div> -->
 
       <!-- Project 4 -->
-      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+      <!-- <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
         <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq9qBhBZ91JbylVzvBIuhqbTO1_dX6aQcWw&s');"></div>
         <div class="relative p-6">
           <h4 class="text-lg sm:text-xl font-bold mb-2">Custom 3D Parts for Rescue Drone</h4>
@@ -121,10 +134,10 @@
             <i class="fab fa-github mr-2"></i> View on GitHub
           </a>
         </div>
-      </div>
+      </div> -->
 
       <!-- Project 5 -->
-      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+      <!-- <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
         <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShUwgvnrIpvqnjoQdUSJtlte9WNce1I-MEoQ&s');"></div>
         <div class="relative p-6">
           <h4 class="text-lg sm:text-xl font-bold mb-2">Autonomous Fire-Fighting Robot</h4>
@@ -133,16 +146,16 @@
             <i class="fab fa-github mr-2"></i> View on GitHub
           </a>
         </div>
-      </div>
+      </div> -->
 
       <!-- Project 6 -->
-      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
+      <!-- <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
         <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=900&q=80');"></div>
         <div class="relative p-6">
           <h4 class="text-lg sm:text-xl font-bold mb-2">Personal Portfolio Website</h4>
           <p class="text-sm mb-4">A modern, responsive web portfolio highlighting personal projects, skills, and achievements. Built to showcase engineering innovation and hands-on technical work with a clean and engaging layout.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Project 7 -->
       <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
@@ -183,7 +196,7 @@
     <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-6">Skills</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
       <!-- Programming -->
-      <div class="bg-gray-800 p-4 rounded-lg">
+      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
         <h4 class="text-lg text-yellow-300 mb-3">Programming</h4>
         <ul class="space-y-2">
           <li class="flex items-center">
@@ -202,7 +215,7 @@
       </div>
 
       <!-- Tools -->
-      <div class="bg-gray-800 p-4 rounded-lg">
+      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
         <h4 class="text-lg text-yellow-300 mb-3">Tools</h4>
         <ul class="space-y-2">
           <li class="flex items-center">
@@ -225,7 +238,7 @@
       </div>
 
       <!-- AI/ML -->
-      <div class="bg-gray-800 p-4 rounded-lg">
+      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
         <h4 class="text-lg text-yellow-300 mb-3">AI/ML</h4>
         <ul class="space-y-2">
           <li class="flex items-center">
@@ -236,10 +249,14 @@
             <i class="fas fa-robot text-yellow-400 mr-2"></i>
             <span>Teachable Machine</span>
           </li>
+          <li class="flex items-center">
+            <i class="fas fa-brain text-yellow-400 mr-2"></i>
+            <span>Hugging Face</span>
+          </li>
         </ul>
       </div>
 
-      <!-- Robotics -->
+      <!-- Robotics
       <div class="bg-gray-800 p-4 rounded-lg">
         <h4 class="text-lg text-yellow-300 mb-3">Robotics</h4>
         <ul class="space-y-2">
@@ -256,20 +273,20 @@
             <span>Mission Planner</span>
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Designing -->
-      <div class="bg-gray-800 p-4 rounded-lg">
+      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
         <h4 class="text-lg text-yellow-300 mb-3">Designing</h4>
         <ul class="space-y-2">
-          <li class="flex items-center">
+          <!-- <li class="flex items-center">
             <i class="fas fa-microchip text-yellow-400 mr-2"></i>
             <span>PCB Design (KiCad)</span>
-          </li>
+          </li> -->
           <li class="flex items-center">
             <i class="fas fa-cube text-yellow-400 mr-2"></i>
-            <span>3D Modeling (Fusion 360)</span>
-          </li>
+            <span>Figma</span>
+          </li> 
           <li class="flex items-center">
             <i class="fas fa-palette text-yellow-400 mr-2"></i>
             <span>Canva</span>
@@ -277,7 +294,7 @@
         </ul>
       </div>
 
-      <!-- Hardware -->
+      <!-- Hardware
       <div class="bg-gray-800 p-4 rounded-lg">
         <h4 class="text-lg text-yellow-300 mb-3">Hardware</h4>
         <ul class="space-y-2">
@@ -298,10 +315,10 @@
             <span>Raspberry Pi</span>
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Soft Skills -->
-      <div class="bg-gray-800 p-4 rounded-lg">
+      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
         <h4 class="text-lg text-yellow-300 mb-3">Soft Skills</h4>
         <ul class="space-y-2">
           <li class="flex items-center">
@@ -319,7 +336,7 @@
         </ul>
       </div>
 
-      <!-- Electronics -->
+      <!-- Electronics
       <div class="bg-gray-800 p-4 rounded-lg">
         <h4 class="text-lg text-yellow-300 mb-3">Electronics</h4>
         <ul class="space-y-2">
@@ -336,10 +353,10 @@
             <span>Analog Electronics</span>
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Web Development -->
-      <div class="bg-gray-800 p-4 rounded-lg">
+      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
         <h4 class="text-lg text-yellow-300 mb-3">Web Development</h4>
         <ul class="space-y-2">
           <li class="flex items-center">
