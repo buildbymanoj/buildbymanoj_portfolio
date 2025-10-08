@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Portfolio of YourName, an Electronics Engineer and Tech Enthusiast specializing in embedded systems, drones, and robotics." />
-    <meta name="keywords" content="electronics, embedded systems, drones, robotics, portfolio, YourName" />
-    <meta name="author" content="YourName" />
+    <meta name="description" content="Portfolio of MANOJ M, a MERN Developer and Electronics Engineer specializing in web development, embedded systems, and robotics." />
+    <meta name="keywords" content="MERN, developer, electronics, embedded systems, drones, robotics, portfolio, MANOJ M" />
+    <meta name="author" content="MANOJ M" />
     <title>MANOJ M | Portfolio</title>
     
     <!-- Favicon -->
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="overflow-x-hidden">
+  <body id="bod" class="overflow-x-hidden">
     <!-- Stars Background -->
     <div class="stars-container"></div>
 
@@ -28,24 +28,40 @@
     <nav class="fixed w-full top-0 left-0 z-50" aria-label="Main navigation">
       <div class="container mx-auto px-4 py-3 sm:py-4 md:py-6 flex justify-between items-center">
         <a href="#" onclick="window.location.reload(); return false;" class="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity">
-          <img src="assets/applogo.png" alt="MANOJ M Logo" class="h-8 sm:h-10 md:h-12 lg:h-14 w-auto" style="border: 2px solid red; background-color: white;" onerror="console.log('Logo failed to load');" onload="console.log('Logo loaded successfully');">
-          <h1 class="text-yellow-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider">MANOJ M</h1>
+          <img src="assets/applogo.png" alt="MANOJ M Logo" class="h-8 sm:h-10 md:h-12 lg:h-14 w-auto logo-img">
+          <h1 class="nav-title text-yellow-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider">MANOJ M</h1>
         </a>
-        <button class="md:hidden text-yellow-300 focus:outline-none" id="menu-toggle" aria-label="Toggle menu">
+          <!-- New Day/Night Toggle Switch -->
+          <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <div class="slider">
+              <div class="sun"></div>
+              <div class="moon"></div>
+              <div class="cloud cloud1"></div>
+              <div class="cloud cloud2"></div>
+              <div class="star star1"></div>
+              <div class="star star2"></div>
+              <div class="star star3"></div>
+              <div class="star star4"></div>
+              <div class="star star5"></div>
+            </div>
+          </label>
+        <button class="md:hidden nav-text focus:outline-none" id="menu-toggle" aria-label="Toggle menu">
           <i class="fas fa-bars text-2xl"></i>
         </button>
-        <div class="hidden md:flex space-x-6 lg:space-x-8 text-yellow-300" id="nav-links">
+        <div class="hidden md:flex space-x-6 lg:space-x-8 nav-text" id="nav-links">
           <a href="#about" class="hover:underline">About</a>
           <a href="#projects" class="hover:underline">Projects</a>
           <a href="#skills" class="hover:underline">Skills</a>
-          <a href="#resume" class="hover:underline">Resume</a>
+          <a href="#achievements" class="hover:underline">Achievements</a>
           <a href="#contact" class="hover:underline">Contact</a>
         </div>
       </div>
       <!-- Mobile Menu -->
-      <div class="hidden md:hidden bg-black w-full absolute top-12 sm:top-16 left-0" id="mobile-menu">
-        <div class="flex flex-col items-center space-y-4 py-4 text-yellow-300">
+      <div class="hidden md:hidden bg-mobile-menu w-full absolute top-16 left-0" id="mobile-menu">
+        <div class="flex flex-col items-center space-y-4 py-4 nav-text">
           <a href="#about" class="hover:underline">About</a>
+          <a href="#achievements" class="hover:underline">Achievements</a>
           <a href="#projects" class="hover:underline">Projects</a>
           <a href="#skills" class="hover:underline">Skills</a>
           <a href="#resume" class="hover:underline">Resume</a>
@@ -57,424 +73,319 @@
     <!-- Hero Section -->
     <section class="h-screen flex flex-col justify-center items-center text-center relative" id="hero">
       <canvas id="circuit-canvas" class="absolute inset-0 -z-5"></canvas>
-      <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-yellow-400 font-bold mb-4 animate-fade-in">Hi, I’m MANOJ M</h2>
-      <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-yellow-200 mb-8 animate-fade-in-delay">MERN Developer | Coder | Electronics Engineer </p>
-      <a href="#projects" class="bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay">View My Work</a>
+      <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl hero-title font-bold mb-4 animate-fade-in">Hi, I’m MANOJ M</h2>
+      <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl hero-subtitle mb-8 animate-fade-in-delay">MERN Developer | Coder | Electronics Engineer </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+  <a href="#projects" class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay">View My Work</a>
+  <a href="assets/resume_MANOJ_M.pdf" class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay" download>Download My Resume</a>
+      </div>
 
-<div class="logos-slideshow">
-  <div class="logos">
-    <i class="fab fa-github" data-title="Git & GitHub"></i>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code" data-title="VS Code">
-    <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face" data-title="Hugging Face">
-    <i class="fab fa-node-js" data-title="Node.js"></i>
-    <i class="fas fa-server" data-title="Express.js"></i>
-    <i class="fas fa-database" data-title="MongoDB"></i>
-    <i class="fab fa-react" data-title="React"></i>
-    <i class="fab fa-js" data-title="JavaScript"></i>
-    <i class="fab fa-java" data-title="Java"></i>
-    <i class="fab fa-python" data-title="Python"></i>
-    <i class="fab fa-github" data-title="Git & GitHub"></i>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code" data-title="VS Code">
-    <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face" data-title="Hugging Face">
-    <i class="fab fa-node-js" data-title="Node.js"></i>
-    <i class="fas fa-server" data-title="Express.js"></i>
-    <i class="fas fa-database" data-title="MongoDB"></i>
-    <i class="fab fa-react" data-title="React"></i>
-    <i class="fab fa-js" data-title="JavaScript"></i>
-    <i class="fab fa-java" data-title="Java"></i>
-    <i class="fab fa-python" data-title="Python"></i>
-  </div>
-</div>
-
+      <div class="logos-slideshow">
+        <div class="logos">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" data-title="Git & GitHub">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code" data-title="VS Code">
+          <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face" data-title="Hugging Face">
+          <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-title="Node.js">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" data-title="Express.js" style="background:#fff; border-radius:8px; padding:2px;">
+          <img src="https://www.mongodb.com/assets/images/global/leaf.png" alt="MongoDB" data-title="MongoDB">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" data-title="React">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" data-title="JavaScript">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" data-title="Java" style="background:#fff; border-radius:8px; padding:2px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" data-title="Python">
+          <!-- Duplicates for seamless scroll -->
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" data-title="Git & GitHub">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code" data-title="VS Code">
+          <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face" data-title="Hugging Face">
+          <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-title="Node.js">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" data-title="Express.js" style="background:#fff; border-radius:8px; padding:2px;">
+          <img src="https://www.mongodb.com/assets/images/global/leaf.png" alt="MongoDB" data-title="MongoDB">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" data-title="React">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" data-title="JavaScript">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" data-title="Java" style="background:#fff; border-radius:8px; padding:2px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" data-title="Python">
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-black text-white">
+    <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
       <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
-        <!-- Custom Profile Card for Image -->
         <div class="card">
           <div class="image">
-            <img src="./assets/MANOJ.jpg" alt="Profile Image" />
+            <img src="./assets/MANOJ.jpg" alt="Profile Image of Manoj" />
           </div>
           <div class="content">
-      <h3>Hi! 👋</h3>
-      <p>I'm Manoj, an ECE student who loves tech, coding, and building things.<br></p>
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});" style="margin-top:12px; background:#facc15; color:#111; border:none; border-radius:8px; padding:8px 18px; font-weight:600; cursor:pointer; transition:background 0.2s;">Contact Me</button>
+            <h3>Hi! 👋</h3>
+            <p>I'm Manoj, an ECE student who loves tech, coding, and building things.</p>
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});" class="contact-button">Contact Me</button>
           </div>
         </div>
         <div class="flex-1">
-          <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-4">About Me</h3>
-          <p class="max-w-2xl sm:max-w-3xl lg:max-w-4xl text-yellow-100 leading-relaxed text-sm sm:text-base">
+          <h3 class="text-2xl sm:text-3xl section-title mb-4">About Me</h3>
+          <p class="max-w-2xl sm:max-w-3xl lg:max-w-4xl section-subtitle leading-relaxed text-sm sm:text-base">
             I’m an Electronics & Communication Engineering student passionate about embedded systems, drones, robotics, and software development. My mission is to create innovative tech solutions that solve real-world problems. When I’m not coding or tinkering with circuits, you’ll find me exploring the latest advancements in AI and IoT.
           </p>
         </div>
       </div>
     </section>
 
-   <!-- Projects Section -->
-<section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-gray-900 text-white">
-  <div class="container mx-auto">
-    <h3 class="text-2xl sm:text-3xl text-yellow-400 font-bold mb-6">Projects</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-
-      <!-- Project 1 -->
-      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
-        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://www.shutterstock.com/image-vector/abstract-brain-wave-concept-on-260nw-303790283.jpg');"></div>
-        <div class="relative p-6">
-          <h4 class="text-lg sm:text-xl font-bold mb-2">BCI-Controlled Car Game</h4>
-          <p class="text-sm mb-4">A brain-computer interface (BCI) game using EEG sensor data to control a car based on user focus and mental activity. Blends neurotechnology and real-time gaming for an innovative interactive experience.</p>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
-        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDMlzEUaPr1Kjf8E7xpJlOqEdL2oWANm3Jqw&s');"></div>
-        <div class="relative p-6">
-          <h4 class="text-lg sm:text-xl font-bold mb-2">Yellow Shade Plant Disease Detection</h4>
-          <p class="text-sm mb-4">Real-time plant health monitoring tool using HSV color filtering to detect yellow pigmentation. Built with OpenCV and Python, it identifies early signs of nutrient deficiencies via webcam feed.</p>
-          <a href="https://github.com/buildbymanoj/Yellow-Shade-Based-Plant-Disease-Detection-using-OpenCV" target="_blank" class="hover:underline flex items-center">
-            <i class="fab fa-github mr-2"></i> View on GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <!-- <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
-        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_tU92mwVVesrOh-Y-138x6APbWtkNoUwAvA&s');"></div>
-        <div class="relative p-6">
-          <h4 class="text-lg sm:text-xl font-bold mb-2">Automatic Irrigation System</h4>
-          <p class="text-sm mb-4">Smart water-saving solution using Arduino Uno to monitor soil moisture and automate irrigation. Reduces water waste and improves crop health with real-time sensor data.</p>
-          <a href="https://github.com/buildbymanoj/Automatic_Irrigation_System_Using_Arduino" target="_blank" class="hover:underline flex items-center">
-            <i class="fab fa-github mr-2"></i> View on GitHub
-          </a>
-        </div>
-      </div> -->
-
-      <!-- Project 4 -->
-      <!-- <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
-        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq9qBhBZ91JbylVzvBIuhqbTO1_dX6aQcWw&s');"></div>
-        <div class="relative p-6">
-          <h4 class="text-lg sm:text-xl font-bold mb-2">Custom 3D Parts for Rescue Drone</h4>
-          <p class="text-sm mb-4">Designed and 3D-printed modular drone components optimized for disaster rescue missions. Built for TechnoXian 2024, this project enhances drone durability, payload handling, and field adaptability.</p>
-          <a href="https://github.com/buildbymanoj/3D-parts-For-Rescue-Drone" target="_blank" class="hover:underline flex items-center">
-            <i class="fab fa-github mr-2"></i> View on GitHub
-          </a>
-        </div>
-      </div> -->
-
-      <!-- Project 5 -->
-      <!-- <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
-        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShUwgvnrIpvqnjoQdUSJtlte9WNce1I-MEoQ&s');"></div>
-        <div class="relative p-6">
-          <h4 class="text-lg sm:text-xl font-bold mb-2">Autonomous Fire-Fighting Robot</h4>
-          <p class="text-sm mb-4">An Arduino Uno–powered robot that detects fire using flame sensors and autonomously navigates to extinguish it. Designed for rapid response in indoor fire hazards and small-scale emergencies.</p>
-          <a href="https://github.com/buildbymanoj/Fire-Detection-and-Extinguishing-Robot-using-Arduino" target="_blank" class="hover:underline flex items-center">
-            <i class="fab fa-github mr-2"></i> View on GitHub
-          </a>
-        </div>
-      </div> -->
-
-      <!-- Project 6 -->
-      <!-- <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
-        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=900&q=80');"></div>
-        <div class="relative p-6">
-          <h4 class="text-lg sm:text-xl font-bold mb-2">Personal Portfolio Website</h4>
-          <p class="text-sm mb-4">A modern, responsive web portfolio highlighting personal projects, skills, and achievements. Built to showcase engineering innovation and hands-on technical work with a clean and engaging layout.</p>
-        </div>
-      </div> -->
-
-      <!-- Project 7 -->
-      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
-        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80');"></div>
-        <div class="relative p-6">
-          <h4 class="text-lg sm:text-xl font-bold mb-2">🤖 BuildbyManoj-chatbot | AI Assistant with RAG</h4>
-          <p class="text-sm mb-4">Flask-powered AI assistant with live web search for real-time, context-aware answers. Tech Stack: Python, Flask, Web Scraping, Render</p>
-          <div class="flex space-x-4">
-            <a href="https://buildbymanoj-chatbot.onrender.com/" target="_blank" class="hover:underline flex items-center">
-              <i class="fas fa-external-link-alt mr-2"></i> Live Demo
-            </a>
-            <a href="https://github.com/buildbymanoj/BuildbyManoj-chatbot" target="_blank" class="hover:underline flex items-center">
-              <i class="fab fa-github mr-2"></i> GitHub
-            </a>
+   
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
+      <div class="container mx-auto">
+        <h3 class="text-2xl sm:text-3xl section-title font-bold mb-6">Projects</h3>
+        <div class="projects-container">
+          <div class="glow-button">
+            <div class="glow-border">
+              <div class="project-content">
+                <div class="project-icon">🧠</div>
+                <h4>BCI-Controlled Car Game</h4>
+                <p>A brain-computer interface (BCI) game using EEG sensor data to control a car based on user focus and mental activity.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="glow-button">
+            <div class="glow-border">
+              <div class="project-content">
+                <div class="project-icon">🌱</div>
+                <h4>Yellow Shade Plant Disease Detection</h4>
+                <p>A real-time plant health monitoring tool using HSV color filtering to detect yellow pigmentation via webcam feed.</p>
+                <div class="project-links">
+                  <a href="https://github.com/buildbymanoj/Yellow-Shade-Based-Plant-Disease-Detection-using-OpenCV" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="glow-button">
+            <div class="glow-border">
+              <div class="project-content">
+                <div class="project-icon">🤖</div>
+                <h4>BuildbyManoj-chatbot | AI Assistant</h4>
+                <p>Flask-powered AI assistant with live web search for real-time, context-aware answers. Tech Stack: Python, Flask, Web Scraping, Render</p>
+                <div class="project-links">
+                  <a href="https://buildbymanoj-chatbot.onrender.com/" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                  <span class="link-divider">|</span>
+                  <a href="https://github.com/buildbymanoj/BuildbyManoj-chatbot" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="glow-button">
+            <div class="glow-border">
+              <div class="project-content">
+                <div class="project-icon">🥗</div>
+                <h4>NutritionTracker | Full-Stack Web App</h4>
+                <p>MERN stack app for tracking and analyzing daily nutrition. Tech Stack: MongoDB, Express.js, React, Node.js, HTML/CSS</p>
+                <div class="project-links">
+                  <a href="https://github.com/buildbymanoj/Nutrify" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Project 8 -->
-      <div class="relative border border-yellow-300 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-yellow-300/50 transition-shadow">
-        <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80');"></div>
-        <div class="relative p-6">
-          <h4 class="text-lg sm:text-xl font-bold mb-2">🥗 NutritionTracker | Full-Stack Web App</h4>
-          <p class="text-sm mb-4">MERN stack app for tracking and analyzing daily nutrition. Tech Stack: MongoDB, Express.js, React, Node.js, HTML/CSS</p>
-          <a href="https://github.com/buildbymanoj/Nutrify" target="_blank" class="hover:underline flex items-center">
-            <i class="fab fa-github mr-2"></i> View on GitHub
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- Skills Section -->
-<section id="skills" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-black text-white">
-  <div class="container mx-auto">
-    <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-6">Skills</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4">
-      <!-- Programming -->
-      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
-        <h4 class="text-lg text-yellow-300 mb-3">Programming</h4>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="fas fa-code text-yellow-400 mr-2"></i>
-            <span>C</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fab fa-java text-yellow-400 mr-2"></i>
-            <span>Java</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fab fa-python text-yellow-400 mr-2"></i>
-            <span>Python</span>
-          </li>
-        </ul>
-      </div>
-
-      
-
-      <!-- AI/ML -->
-      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
-        <h4 class="text-lg text-yellow-300 mb-3">AI/ML</h4>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="fas fa-eye text-yellow-400 mr-2"></i>
-            <span>OpenCV</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-robot text-yellow-400 mr-2"></i>
-            <span>Teachable Machine</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-brain text-yellow-400 mr-2"></i>
-            <span>Hugging Face</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Robotics
-      <div class="bg-gray-800 p-4 rounded-lg">
-        <h4 class="text-lg text-yellow-300 mb-3">Robotics</h4>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="fas fa-helicopter text-yellow-400 mr-2"></i>
-            <span>Drone Building & Piloting</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-satellite-dish text-yellow-400 mr-2"></i>
-            <span>QGC</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-route text-yellow-400 mr-2"></i>
-            <span>Mission Planner</span>
-          </li>
-        </ul>
-      </div> -->
-
-      <!-- Designing -->
-      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
-        <h4 class="text-lg text-yellow-300 mb-3">Designing</h4>
-        <ul class="space-y-2">
-          <!-- <li class="flex items-center">
-            <i class="fas fa-microchip text-yellow-400 mr-2"></i>
-            <span>PCB Design (KiCad)</span>
-          </li> -->
-          <li class="flex items-center">
-            <i class="fas fa-cube text-yellow-400 mr-2"></i>
-            <span>Figma</span>
-          </li> 
-          <li class="flex items-center">
-            <i class="fas fa-palette text-yellow-400 mr-2"></i>
-            <span>Canva</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Hardware
-      <div class="bg-gray-800 p-4 rounded-lg">
-        <h4 class="text-lg text-yellow-300 mb-3">Hardware</h4>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="fas fa-microchip text-yellow-400 mr-2"></i>
-            <span>Arduino</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-wifi text-yellow-400 mr-2"></i>
-            <span>ESP32</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-microchip text-yellow-400 mr-2"></i>
-            <span>MSP430</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-microchip text-yellow-400 mr-2"></i>
-            <span>Raspberry Pi</span>
-          </li>
-        </ul>
-      </div> -->
-
-
-
-      <!-- Electronics
-      <div class="bg-gray-800 p-4 rounded-lg">
-        <h4 class="text-lg text-yellow-300 mb-3">Electronics</h4>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="fas fa-bolt text-yellow-400 mr-2"></i>
-            <span>Circuit Theory</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-memory text-yellow-400 mr-2"></i>
-            <span>Digital Electronics</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-wave-square text-yellow-400 mr-2"></i>
-            <span>Analog Electronics</span>
-          </li>
-        </ul>
-      </div> -->
-
-      <!-- Tools -->
-      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
-        <h4 class="text-lg text-yellow-300 mb-3">Tools</h4>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="fab fa-github text-yellow-400 mr-2"></i>
-            <span>Git & GitHub</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-code text-yellow-400 mr-2"></i>
-            <span>VS Code</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-flask text-yellow-400 mr-2"></i>
-            <span>Google Colab</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-file-alt text-yellow-400 mr-2"></i>
-            <span>MS Office (Excel, Word, PowerPoint)</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Frontend -->
-      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
-        <h4 class="text-lg text-yellow-300 mb-3">Frontend</h4>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="fab fa-react text-yellow-400 mr-2"></i>
-            <span>React</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fab fa-js text-yellow-400 mr-2"></i>
-            <span>JavaScript</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fab fa-html5 text-yellow-400 mr-2"></i>
-            <span>HTML</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fab fa-css3-alt text-yellow-400 mr-2"></i>
-            <span>CSS</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Backend -->
-      <div class="bg-gray-800 p-4 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-yellow-400/50 hover:scale-105">
-        <h4 class="text-lg text-yellow-300 mb-3">Backend</h4>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <i class="fab fa-node-js text-yellow-400 mr-2"></i>
-            <span>Node.js</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-server text-yellow-400 mr-2"></i>
-            <span>Express.js</span>
-          </li>
-          <li class="flex items-center">
-            <i class="fas fa-database text-yellow-400 mr-2"></i>
-            <span>MongoDB</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- Resume -->
-
-    <section id="resume" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-gray-900 text-white text-center">
-      <div class="container mx-auto">
-        <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-4">Resume</h3>
-        <p class="mb-4 text-yellow-100 text-sm sm:text-base">Download my latest resume in PDF format.</p>
-        <a href="assets/resume_MANOJ_M.pdf" class="bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition" download>Download Resume</a>
       </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
+      <div class="container mx-auto">
+        <h3 class="text-2xl sm:text-3xl section-title mb-6">Skills</h3>
+        <style class="hover"></style>
+        <section class="skill-cards">
+          <div class="three-d-wrapper">
+            <div class="skill-card programming animated">
+              <div class="card-content">
+                <h4>Programming</h4>
+                <ul>
+                  <li>C</li>
+                  <li>Java</li>
+                  <li>Python</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="three-d-wrapper">
+            <div class="skill-card frontend animated">
+              <div class="card-content">
+                <h4>Frontend</h4>
+                <ul>
+                  <li>React</li>
+                  <li>JavaScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="three-d-wrapper">
+            <div class="skill-card backend animated">
+              <div class="card-content">
+                <h4>Backend</h4>
+                <ul>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                  <li>MongoDB</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="three-d-wrapper">
+            <div class="skill-card aiml animated">
+              <div class="card-content">
+                <h4>AI/ML</h4>
+                <ul>
+                  <li>OpenCV</li>
+                  <li>Teachable Machine</li>
+                  <li>Hugging Face</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="three-d-wrapper">
+            <div class="skill-card design animated">
+              <div class="card-content">
+                <h4>Design</h4>
+                <ul>
+                  <li>Figma</li>
+                  <li>Canva</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="three-d-wrapper">
+            <div class="skill-card tools animated">
+              <div class="card-content">
+                <h4>Tools</h4>
+                <ul>
+                  <li>Git & GitHub</li>
+                  <li>VS Code</li>
+                  <li>Google Colab</li>
+                  <li>MS Office Suite</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+     <!-- Achievements Section -->
+    <section id="achievements" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
+      <div class="container mx-auto">
+        <h3 class="text-2xl sm:text-3xl section-title mb-6">Achievements</h3>
+        <div class="achievements-container">
+          <div class="glow-button">
+            <div class="glow-border">
+              <div class="project-content">
+                <div class="project-icon">🏆</div>
+                <h4>Competitions & Hackathons</h4>
+                <div class="achievement-list">
+                  <div class="achievement-item">
+                    <i class="fas fa-trophy card-icon"></i>
+                    <span>2nd place in Drone Rescue Challenge at TechnoXian 2024</span>
+                  </div>
+                  <div class="achievement-item">
+                    <i class="fas fa-trophy card-icon"></i>
+                    <span>2nd place in Texas Instruments MSP430 Mentored Hackathon 2024</span>
+                  </div>
+                  <div class="achievement-item">
+                    <i class="fas fa-trophy card-icon"></i>
+                    <span>1st place in Project Expo 2024</span>
+                  </div>
+                  <div class="achievement-item">
+                    <i class="fas fa-trophy card-icon"></i>
+                    <span>3rd place at Code Wars: The Rise of Automation, a 12-hour hackathon</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="glow-button">
+            <div class="glow-border">
+              <div class="project-content">
+                <div class="project-icon">👥</div>
+                <h4>Event Organization & Participation</h4>
+                <div class="achievement-list">
+                  <div class="achievement-item">
+                    <i class="fas fa-users-cog card-icon"></i>
+                    <span>Coordinated the Circuit Hunt event during the college symposium</span>
+                  </div>
+                  <div class="achievement-item">
+                    <i class="fas fa-users-cog card-icon"></i>
+                    <span>Organized the Micro Mania event for second-year students</span>
+                  </div>
+                  <div class="achievement-item">
+                    <i class="fas fa-rocket card-icon"></i>
+                    <span>Participated in Flipkart GRiD 6.0</span>
+                  </div>
+                  <div class="achievement-item">
+                    <i class="fas fa-robot card-icon"></i>
+                    <span>Participated in e-Yantra Robotics Competition by IIT Bombay</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
     <!-- Contact -->
-    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 bg-black text-white text-center relative">
+    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 text-center relative">
       <canvas id="microchip-canvas" class="absolute inset-0 -z-5"></canvas>
       <div class="container mx-auto relative z-10">
-        <h3 class="text-2xl sm:text-3xl text-yellow-400 mb-4">Contact Me</h3>
-        <p class="mb-4 text-yellow-100 text-sm sm:text-base">Let’s connect! Drop me a message below.</p>
+        <h3 class="text-2xl sm:text-3xl section-title mb-4">Contact Me</h3>
+        <p class="mb-4 section-subtitle text-sm sm:text-base">Let’s connect! Drop me a message below.</p>
         <form action="https://formspree.io/f/mblyzapv" method="POST" class="max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
           <div class="mb-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-              class="w-full p-3 bg-gray-800 text-yellow-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            />
+            <input type="text" name="name" placeholder="Your Name" required class="form-input w-full p-3 rounded-lg focus:outline-none"/>
           </div>
           <div class="mb-4">
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              class="w-full p-3 bg-gray-800 text-yellow-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            />
+            <input type="email" name="email" placeholder="Your Email" required class="form-input w-full p-3 rounded-lg focus:outline-none"/>
           </div>
           <div class="mb-4">
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              required
-              class="w-full p-3 bg-gray-800 text-yellow-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              rows="5"
-            ></textarea>
+            <textarea name="message" placeholder="Your Message" required class="form-input w-full p-3 rounded-lg focus:outline-none" rows="5"></textarea>
           </div>
-          <button
-            type="submit"
-            class="bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition"
-          >
-            Send Message
-          </button>
+          <button type="submit" class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Send Message</button>
         </form>
         <div class="flex justify-center space-x-4 sm:space-x-6 mt-6">
-          <a href="https://www.linkedin.com/in/manoj-m-53621829a/" target="_blank" aria-label="LinkedIn" class="text-yellow-300 hover:text-yellow-400"><i class="fab fa-linkedin fa-2x"></i></a>
-          <a href="https://github.com/buildbymanoj" target="_blank" aria-label="GitHub" class="text-yellow-300 hover:text-yellow-400"><i class="fab fa-github fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/manoj-m-53621829a/" target="_blank" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
+          <a href="https://github.com/buildbymanoj" target="_blank"aria-label="GitHub" class="social-icon"><i class="fab fa-github fa-2x"></i></a>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center text-yellow-300 py-4 sm:py-6 bg-black">
+    <footer class="text-center py-4 sm:py-6">
       <div class="container mx-auto">
         <p>© 2025 MANOJ M. All rights reserved.</p>
+        <p class="disclaimer">Designed & Created by <b class="author-name">Manoj M</b></p>
       </div>
     </footer>
 
+    <!-- Toast container for sarcastic light-mode confirmation -->
+    <div id="sarcastic-toast" class="sarcastic-toast" aria-live="polite" role="status" style="display:none;">
+      <div class="sarcastic-toast-inner">
+        <strong>Are you really a dev?</strong>
+        <p>Switching to light mode... brave choice. </p>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="script.js"></script>
   </body>

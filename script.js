@@ -1,295 +1,373 @@
-// Dynamic Stars
-function createStars() {
-  const starsContainer = document.querySelector('.stars-container');
-  
-  // Responsive star count based on screen width
-  const width = window.innerWidth;
-  let numStars;
-  
-  if (width < 480) {
-    numStars = 30; // Fewer stars on very small screens
-  } else if (width < 768) {
-    numStars = 50; // Mobile screens
-  } else if (width < 1024) {
-    numStars = 75; // Tablets
-  } else {
-    numStars = 100; // Desktops
-  }
+document.addEventListener('DOMContentLoaded', () => {
+    createStars();
+    initCircuitBoard();
+    initMicrochipParticles();
+    initTheme(); // Initialize theme on load
+    initHolographicCards(); // Initialize holographic skill cards
+});
 
-  for (let i = 0; i < numStars; i++) {
-    const star = document.createElement('div');
-    star.className = 'star';
-    const size = Math.random() * 3 + 1;
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-    star.style.top = `${Math.random() * 100}%`;
-    star.style.left = `${Math.random() * 100}%`;
-    star.style.animationDelay = `${Math.random() * 2}s`;
-    starsContainer.appendChild(star);
-  }
+// --- DYNAMIC STARS ---
+function createStars() {
+    const starsContainer = document.querySelector('.stars-container');
+    if (!starsContainer) return;
+
+    const width = window.innerWidth;
+    let numStars = (width < 768) ? 50 : 100;
+
+    starsContainer.innerHTML = ''; // Clear existing stars
+    for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 2.5 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 2}s`;
+        starsContainer.appendChild(star);
+    }
 }
 
-// Mobile Menu Toggle
+// --- MOBILE MENU ---
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
-
 menuToggle.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-  const icon = menuToggle.querySelector('i');
-  icon.classList.toggle('fa-bars');
-  icon.classList.toggle('fa-times');
+    mobileMenu.classList.toggle('hidden');
+    const icon = menuToggle.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
 });
 
-// Contact Form Submission
-const contactForm = document.querySelector('#contact form');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevent default form submission
-
-    const formData = new FormData(contactForm);
-    const response = await fetch(contactForm.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      contactForm.reset();
-      const successMessage = document.createElement('p');
-      successMessage.textContent = 'Message sent successfully!';
-      successMessage.className = 'text-yellow-400 mt-4';
-      contactForm.appendChild(successMessage);
-      setTimeout(() => successMessage.remove(), 3000);
-    } else {
-      const errorMessage = document.createElement('p');
-      errorMessage.textContent = 'Something went wrong. Please try again.';
-      errorMessage.className = 'text-red-400 mt-4';
-      contactForm.appendChild(errorMessage);
-      setTimeout(() => errorMessage.remove(), 3000);
-    }
-  });
-}
-
-// Scroll Reveal with IntersectionObserver - with responsive thresholds
+// --- SCROLL REVEAL ---
 const sections = document.querySelectorAll('section');
-
-// Adjust threshold based on screen size
-const getThreshold = () => {
-  if (window.innerWidth < 768) {
-    return 0.05; // Lower threshold on mobile for quicker reveals
-  }
-  return 0.1; // Default threshold
-};
-
-const observerOptions = {
-  threshold: getThreshold(),
-  rootMargin: '0px 0px -50px 0px' // Trigger slightly before section is fully visible
-};
-
-const observer = new IntersectionObserver(
-  (entries) => {
+const observerOptions = { threshold: window.innerWidth < 768 ? 0.05 : 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
     });
-  },
-  observerOptions
-);
+}, observerOptions);
+sections.forEach((section) => observer.observe(section));
 
-sections.forEach((section) => {
-  observer.observe(section);
-});
-
-// Smooth Scroll for Anchor Links with offset adjustment
+// --- SMOOTH SCROLL ---
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      // Get header height for offset (responsive)
-      const navHeight = document.querySelector('nav').offsetHeight;
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = targetPosition - navHeight - 20; // Extra padding
-      
-      // Smooth scroll with offset
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      
-      // Close mobile menu if open
-      mobileMenu.classList.add('hidden');
-      menuToggle.querySelector('i').classList.remove('fa-times');
-      menuToggle.querySelector('i').classList.add('fa-bars');
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            if (!mobileMenu.classList.contains('hidden')) {
+                menuToggle.click(); // Close mobile menu
+            }
+        }
+    });
+});
+
+// --- THEME TOGGLE (REFACTORED) ---
+
+// --- THEME TOGGLE ---
+const toggleSwitch = document.getElementById("toggleSwitch");
+const body = document.body;
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        body.classList.remove("light-mode");
+        toggleSwitch.checked = true; // Night mode is checked
+    } else {
+        body.classList.add("light-mode");
+        toggleSwitch.checked = false; // Day mode is unchecked
     }
-  });
+}
+
+// Show sarcastic toast every time user switches from dark -> light; apply theme immediately
+toggleSwitch.addEventListener("change", function (e) {
+    const wantsLight = !this.checked; // unchecked -> light
+
+    if (wantsLight) {
+        // show toast for 2.5s but apply theme immediately for smoother UX
+        showSarcasticToast(3500);
+        localStorage.setItem('theme', 'light');
+        applyTheme('light');
+        return;
+    }
+
+    // switching to dark
+    if (this.checked) {
+        localStorage.setItem('theme', 'dark');
+        applyTheme('dark');
+    }
 });
 
-// 3D Circuit Board (Hero Section)
+// Toast helpers
+function getSarcasticToast() {
+    return document.getElementById('sarcastic-toast');
+}
+
+let _sarcasticToastTimer = null;
+
+function showSarcasticToast(duration = 2500) {
+    const t = getSarcasticToast();
+    if (!t) return;
+    // clear previous timer
+    if (_sarcasticToastTimer) {
+        clearTimeout(_sarcasticToastTimer);
+        _sarcasticToastTimer = null;
+    }
+    t.style.display = 'flex';
+    // allow CSS transition
+    requestAnimationFrame(() => t.classList.add('show'));
+
+    // auto-hide after duration
+    _sarcasticToastTimer = setTimeout(() => {
+        hideSarcasticToast();
+        _sarcasticToastTimer = null;
+    }, duration);
+}
+
+function hideSarcasticToast() {
+    const t = getSarcasticToast();
+    if (!t) return;
+    t.classList.remove('show');
+    // wait for transition to finish then hide
+    setTimeout(() => { t.style.display = 'none'; }, 300);
+    if (_sarcasticToastTimer) {
+        clearTimeout(_sarcasticToastTimer);
+        _sarcasticToastTimer = null;
+    }
+}
+
+function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+        if (savedTheme) {
+                applyTheme(savedTheme);
+        } else if (prefersLight) {
+                applyTheme('light');
+        } else {
+                applyTheme('dark');
+        }
+}
+
+
+// --- THREE.JS ANIMATIONS ---
 function initCircuitBoard() {
-  const canvas = document.getElementById('circuit-canvas');
-  if (!canvas) return;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  
-  // Use pixel ratio for better display on high-DPI screens
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-  // Adjust geometry size based on screen width for better responsiveness
-  const isMobile = window.innerWidth < 768;
-  const geometryWidth = isMobile ? 4 : 5;
-  const geometryHeight = isMobile ? 2 : 3;
-  
-  const geometry = new THREE.PlaneGeometry(geometryWidth, geometryHeight);
-  const material = new THREE.MeshBasicMaterial({
-    color: 0xfacc15,
-    wireframe: true,
-    side: THREE.DoubleSide,
-  });
-  const circuit = new THREE.Mesh(geometry, material);
-  scene.add(circuit);
-
-  camera.position.z = 5;
-
-  function animate() {
-    requestAnimationFrame(animate);
-    // Adjust rotation speed based on device performance
-    circuit.rotation.y += 0.01;
-    renderer.render(scene, camera);
-  }
-
-  animate();
-
-  window.addEventListener('resize', () => {
-    // Full responsive resize handling
+    const canvas = document.getElementById('circuit-canvas');
+    if (!canvas || !window.THREE) return;
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    
-    // Update geometry based on new screen size
-    const isMobileNow = window.innerWidth < 768;
-    circuit.geometry = new THREE.PlaneGeometry(
-      isMobileNow ? 4 : 5,
-      isMobileNow ? 2 : 3
-    );
-  });
-}
-
-// 3D Drone Model (Projects Section)
-function initDrone() {
-  const canvas = document.getElementById('drone-canvas');
-  if (!canvas) return;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-
-  const geometry = new THREE.BoxGeometry(0.5, 0.1, 0.5);
-  const material = new THREE.MeshBasicMaterial({ color: 0xfacc15, wireframe: true });
-  const drone = new THREE.Mesh(geometry, material);
-  scene.add(drone);
-
-  // Add propellers (simplified as small cubes)
-  const propGeometry = new THREE.BoxGeometry(0.1, 0.05, 0.1);
-  const propMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-  const props = [];
-  const propPositions = [
-    [0.2, 0.1, 0.2],
-    [0.2, 0.1, -0.2],
-    [-0.2, 0.1, 0.2],
-    [-0.2, 0.1, -0.2],
-  ];
-
-  propPositions.forEach((pos) => {
-    const prop = new THREE.Mesh(propGeometry, propMaterial);
-    prop.position.set(pos[0], pos[1], pos[2]);
-    drone.add(prop);
-    props.push(prop);
-  });
-
-  camera.position.z = 1.5;
-
-  function animate() {
-    requestAnimationFrame(animate);
-    drone.rotation.y += 0.02;
-    props.forEach((prop) => {
-      prop.rotation.z += 0.1;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const isMobile = window.innerWidth < 768;
+    const geometry = new THREE.PlaneGeometry(isMobile ? 4 : 5, isMobile ? 2 : 3);
+    const material = new THREE.MeshBasicMaterial({ color: 0xfacc15, wireframe: true, side: THREE.DoubleSide });
+    const circuit = new THREE.Mesh(geometry, material);
+    scene.add(circuit);
+    camera.position.z = 5;
+    function animate() { requestAnimationFrame(animate); circuit.rotation.y += 0.01; renderer.render(scene, camera); }
+    animate();
+    window.addEventListener('resize', () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
     });
-    renderer.render(scene, camera);
-  }
-
-  animate();
 }
 
-// 3D Microchip Particles (Contact Section)
 function initMicrochipParticles() {
-  const canvas = document.getElementById('microchip-canvas');
-  if (!canvas) return;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-
-  const particles = new THREE.Group();
-  const geometry = new THREE.BoxGeometry(0.05, 0.05, 0.05);
-  const material = new THREE.MeshBasicMaterial({ color: 0xfacc15 });
-
-  for (let i = 0; i < 50; i++) {
-    const particle = new THREE.Mesh(geometry, material);
-    particle.position.set(
-      (Math.random() - 0.5) * 10,
-      (Math.random() - 0.5) * 10,
-      (Math.random() - 0.5) * 10
-    );
-    particle.userData = { velocity: new THREE.Vector3(0, Math.random() * 0.02, 0) };
-    particles.add(particle);
-  }
-
-  scene.add(particles);
-
-  camera.position.z = 5;
-
-  function animate() {
-    requestAnimationFrame(animate);
-    particles.children.forEach((particle) => {
-      particle.position.add(particle.userData.velocity);
-      if (particle.position.y > 5) particle.position.y = -5;
-    });
-    particles.rotation.y += 0.005;
-    renderer.render(scene, camera);
-  }
-
-  animate();
-
-  window.addEventListener('resize', () => {
+    const canvas = document.getElementById('microchip-canvas');
+    if (!canvas || !window.THREE) return;
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-  });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const particles = new THREE.Group();
+    const geometry = new THREE.BoxGeometry(0.05, 0.05, 0.05);
+    const material = new THREE.MeshBasicMaterial({ color: 0xfacc15 });
+    for (let i = 0; i < 50; i++) {
+        const particle = new THREE.Mesh(geometry, material);
+        particle.position.set((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
+        particle.userData = { velocity: new THREE.Vector3(0, Math.random() * 0.02, 0) };
+        particles.add(particle);
+    }
+    scene.add(particles);
+    camera.position.z = 5;
+    function animate() { requestAnimationFrame(animate); particles.children.forEach(p => { p.position.add(p.userData.velocity); if (p.position.y > 5) p.position.y = -5; }); particles.rotation.y += 0.005; renderer.render(scene, camera); }
+    animate();
+    window.addEventListener('resize', () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    });
 }
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-  createStars();
-  initCircuitBoard();
-  initDrone();
-  initMicrochipParticles();
-});
+// --- HOLOGRAPHIC SKILL CARDS ---
+function initHolographicCards() {
+    var x;
+    var $cards = $(".skill-card");
+    var $style = $(".hover");
 
-// Handle window resize events
-window.addEventListener('resize', () => {
-  // Clear and recreate stars on resize for better responsiveness
-  const starsContainer = document.querySelector('.stars-container');
-  if (starsContainer) {
-    starsContainer.innerHTML = '';
+    $cards
+        .on("mousemove touchmove", function(e) { 
+            // normalise touch/mouse
+            var pos = [e.offsetX, e.offsetY];
+            e.preventDefault();
+            if (e.type === "touchmove") {
+                pos = [e.touches[0].clientX, e.touches[0].clientY];
+            }
+            var $card = $(this);
+            // math for mouse position
+            var l = pos[0];
+            var t = pos[1];
+            var h = $card.height();
+            var w = $card.width();
+            var px = Math.abs(Math.floor(100 / w * l) - 100);
+            var py = Math.abs(Math.floor(100 / h * t) - 100);
+            var pa = (50 - px) + (50 - py);
+            // math for gradient / background positions
+            var lp = (50 + (px - 50) / 1.5);
+            var tp = (50 + (py - 50) / 1.5);
+            var px_spark = (50 + (px - 50) / 7);
+            var py_spark = (50 + (py - 50) / 7);
+            var p_opc = 20 + (Math.abs(pa) * 1.5);
+            var ty = ((tp - 50) / 2) * -1;
+            var tx = ((lp - 50) / 1.5) * .5;
+            // css to apply for active card
+            var grad_pos = `background-position: ${lp}% ${tp};`
+            var sprk_pos = `background-position: ${px_spark}% ${py_spark};`
+            var opc = `opacity: ${p_opc / 100};`
+            var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`
+            // need to use a <style> tag for pseudo elements
+            var style = `
+                .skill-card:hover:before { ${grad_pos} }  /* gradient */
+                .skill-card:hover:after { ${sprk_pos} ${opc} }   /* sparkles */ 
+            `
+            // set / apply css class and style
+            $cards.removeClass("active");
+            $card.removeClass("animated");
+            $card.attr("style", tf);
+            $style.html(style);
+            if (e.type === "touchmove") {
+                return false; 
+            }
+            clearTimeout(x);
+        }).on("mouseout touchend touchcancel", function() {
+            // remove css, apply custom animation on end
+            var $card = $(this);
+            $style.html("");
+            $card.removeAttr("style");
+            x = setTimeout(function() {
+                $card.addClass("animated");
+            }, 2500);
+        });
+}
+
+// --- GLOWING BUTTON EFFECTS ---
+function initGlowingButtons() {
+    // CSS.registerProperty support detection
+    if ('CSS' in window && 'registerProperty' in CSS) {
+        try {
+            // Register custom properties for better animation support
+            CSS.registerProperty({
+                name: '--bg-size',
+                syntax: '<percentage>',
+                initialValue: '50%',
+                inherits: false
+            });
+            
+            CSS.registerProperty({
+                name: '--bg-angle',
+                syntax: '<angle>',
+                initialValue: '0deg',
+                inherits: false
+            });
+        } catch (e) {
+            console.log('CSS.registerProperty already registered or not supported');
+        }
+    }
+
+    // Enhanced hover effects for glowing buttons
+    const glowButtons = document.querySelectorAll('.glow-button');
+    
+    glowButtons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            const glowBorder = button.querySelector('.glow-border');
+            if (glowBorder) {
+                glowBorder.style.animationDuration = '2s';
+            }
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            const glowBorder = button.querySelector('.glow-border');
+            if (glowBorder) {
+                glowBorder.style.animationDuration = '4s';
+            }
+        });
+        
+        // Add click ripple effect
+        button.addEventListener('click', (e) => {
+            if (!button.querySelector('a').href || button.querySelector('a').href === window.location.href) {
+                e.preventDefault();
+                return;
+            }
+            
+            // Create ripple effect
+            const ripple = document.createElement('div');
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: radial-gradient(circle, rgba(250, 204, 21, 0.3) 0%, transparent 70%);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+                z-index: 10;
+            `;
+            
+            button.style.position = 'relative';
+            button.appendChild(ripple);
+            
+            // Remove ripple after animation
+            setTimeout(() => {
+                if (ripple.parentNode) {
+                    ripple.parentNode.removeChild(ripple);
+                }
+            }, 600);
+        });
+    });
+    
+    // Add CSS for ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Initialize glowing buttons when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
     createStars();
-  }
+    initCircuitBoard();
+    initMicrochipParticles();
+    initTheme();
+    initHolographicCards();
+    initGlowingButtons(); // Initialize glowing button effects
 });
