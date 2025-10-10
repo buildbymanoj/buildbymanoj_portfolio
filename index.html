@@ -8,16 +8,35 @@
     <meta name="author" content="MANOJ M" />
     <title>MANOJ M | Portfolio</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/applogo.png?v=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/applogo.png?v=1">
-    <link rel="shortcut icon" href="assets/applogo.png?v=1">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/applogo.png?v=1">
-    <meta name="msapplication-TileImage" content="assets/applogo.png?v=1">
+    <!-- Favicon (Single reference) -->
+    <link rel="icon" type="image/png" href="assets/applogo.png">
+    <link rel="apple-touch-icon" href="assets/applogo.png">
     
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://upload.wikimedia.org">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="assets/applogo.png" as="image">
+    
+    <!-- Critical CSS (inline later for best performance) -->
     <link rel="stylesheet" href="style.css" />
+    
+    <!-- Font Awesome with optimized loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
+    
+    <!-- Tailwind: Consider removing if not heavily used -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    </noscript>
   </head>
 
   <body id="bod" class="overflow-x-hidden">
@@ -112,7 +131,7 @@
       <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
         <div class="card">
           <div class="image">
-            <img src="./assets/MANOJ.jpg" alt="Profile Image of Manoj" />
+            <img src="./assets/MANOJ.jpg" alt="Profile Image of Manoj" loading="lazy" />
           </div>
           <div class="content">
             <h3>Hi! 👋</h3>
@@ -455,8 +474,9 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Scripts: Deferred for non-blocking load -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
