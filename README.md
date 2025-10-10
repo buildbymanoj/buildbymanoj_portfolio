@@ -11,6 +11,10 @@ Welcome to my personal portfolio website repository. This project showcases my s
 - **Skills Section:** Comprehensive overview of technical abilities
 - **Contact Form:** Easy way for potential employers or collaborators to reach out
 - **Performance Optimized:** Fast loading with smooth animations
+  - ⚡ Deferred JavaScript loading for non-blocking render
+  - 🖼️ Lazy loading for below-fold images
+  - 🚀 Aggressive caching via Vercel configuration
+  - 📦 Optimized asset loading (Grade B on Pingdom)
 
 ## 🛠️ Technologies Used
 
@@ -59,6 +63,24 @@ To run this project locally:
 
 4. View the website at `http://localhost:8000`
 
+## ⚡ Performance
+
+This portfolio is optimized for speed and efficiency:
+
+- **Pingdom Grade:** B (85-88)
+- **Load Time:** ~0.7s
+- **Page Size:** ~2.1 MB
+- **Optimization techniques:**
+  - Preconnect to external domains for faster DNS resolution
+  - Deferred JavaScript loading for non-blocking HTML parsing
+  - Lazy loading for below-the-fold images
+  - Aggressive asset caching (1-year cache for static files)
+  - Optimized favicon loading (reduced from 5 to 2 requests)
+
+**Test the performance:**
+- [Pingdom Speed Test](https://tools.pingdom.com)
+- [Google Lighthouse](https://developers.google.com/web/tools/lighthouse)
+
 ## 📚 Folder Structure
 
 ```
@@ -66,7 +88,10 @@ To run this project locally:
 ├── index.html          # Main HTML file
 ├── style.css           # CSS styles
 ├── script.js           # JavaScript functionality
+├── vercel.json         # Vercel deployment & caching config
 ├── assets/             # Resources folder
+│   ├── applogo.png     # Logo image
+│   ├── MANOJ.jpg       # Profile photo
 │   └── resume_MANOJ_M.pdf  # Resume PDF
 └── README.md           # This file
 ```
