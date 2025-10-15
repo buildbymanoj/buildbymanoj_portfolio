@@ -1,482 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Portfolio of MANOJ M, a MERN Developer and Electronics Engineer specializing in web development, embedded systems, and robotics." />
-    <meta name="keywords" content="MERN, developer, electronics, embedded systems, drones, robotics, portfolio, MANOJ M" />
-    <meta name="author" content="MANOJ M" />
-    <title>MANOJ M | Portfolio</title>
-    
-    <!-- Favicon (Single reference) -->
-    <link rel="icon" type="image/png" href="assets/applogo.png">
-    <link rel="apple-touch-icon" href="assets/applogo.png">
-    
-    <!-- Preconnect to external domains for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="dns-prefetch" href="https://upload.wikimedia.org">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="script.js" as="script">
-    <link rel="preload" href="assets/applogo.png" as="image">
-    
-    <!-- Critical CSS (inline later for best performance) -->
-    <link rel="stylesheet" href="style.css" />
-    
-    <!-- Font Awesome with optimized loading -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
-    
-    <!-- Tailwind: Consider removing if not heavily used -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript>
-      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    </noscript>
-  </head>
 
-  <body id="bod" class="overflow-x-hidden">
-    <!-- Stars Background -->
-    <div class="stars-container"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description"
+    content="Portfolio of MANOJ M, a MERN Developer and Electronics Engineer specializing in web development, embedded systems, and robotics." />
+  <meta name="keywords"
+    content="MERN, developer, electronics, embedded systems, drones, robotics, portfolio, MANOJ M" />
+  <meta name="author" content="MANOJ M" />
+  <title>MANOJ M | Portfolio</title>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full top-0 left-0 z-50" aria-label="Main navigation">
-      <div class="container mx-auto px-4 py-3 sm:py-4 md:py-6 flex justify-between items-center">
-        <a href="#" onclick="window.location.reload(); return false;" class="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity">
-          <img src="assets/applogo.png" alt="MANOJ M Logo" class="h-8 sm:h-10 md:h-12 lg:h-14 w-auto logo-img">
-          <h1 class="nav-title text-yellow-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider">MANOJ M</h1>
-        </a>
-          <!-- New Day/Night Toggle Switch -->
-          <label class="switch">
-            <input type="checkbox" id="toggleSwitch">
-            <div class="slider">
-              <div class="sun"></div>
-              <div class="moon"></div>
-              <div class="cloud cloud1"></div>
-              <div class="cloud cloud2"></div>
-              <div class="star star1"></div>
-              <div class="star star2"></div>
-              <div class="star star3"></div>
-              <div class="star star4"></div>
-              <div class="star star5"></div>
-            </div>
-          </label>
-        <button class="md:hidden nav-text focus:outline-none" id="menu-toggle" aria-label="Toggle menu">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-        <div class="hidden md:flex space-x-6 lg:space-x-8 nav-text" id="nav-links">
-          <a href="#about" class="hover:underline">About</a>
-          <a href="#projects" class="hover:underline">Projects</a>
-          <a href="#skills" class="hover:underline">Skills</a>
-          <a href="#achievements" class="hover:underline">Achievements</a>
-          <a href="#contact" class="hover:underline">Contact</a>
+  <!-- Favicon (Single reference) -->
+  <link rel="icon" type="image/png" href="assets/applogo.png">
+  <link rel="apple-touch-icon" href="assets/applogo.png">
+
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://upload.wikimedia.org">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="script.js" as="script">
+  <link rel="preload" href="assets/applogo.png" as="image">
+
+  <!-- Critical CSS (inline later for best performance) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome with optimized loading -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print"
+    onload="this.media='all'" />
+
+  <!-- Tailwind: Consider removing if not heavily used -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" media="print"
+    onload="this.media='all'" />
+  <noscript>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </noscript>
+</head>
+
+<body id="bod" class="overflow-x-hidden">
+  <!-- Stars Background -->
+  <div class="stars-container"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full top-0 left-0 z-50" aria-label="Main navigation">
+    <div class="container mx-auto px-4 py-3 sm:py-4 md:py-6 flex justify-between items-center">
+      <a href="#" onclick="window.location.reload(); return false;"
+        class="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity">
+        <img src="assets/applogo.png" alt="MANOJ M Logo" class="h-8 sm:h-10 md:h-12 lg:h-14 w-auto logo-img">
+        <h1 class="nav-title text-yellow-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider">MANOJ
+          M</h1>
+      </a>
+      <!-- New Day/Night Toggle Switch -->
+      <label class="switch">
+        <input type="checkbox" id="toggleSwitch">
+        <div class="slider">
+          <div class="sun"></div>
+          <div class="moon"></div>
+          <div class="cloud cloud1"></div>
+          <div class="cloud cloud2"></div>
+          <div class="star star1"></div>
+          <div class="star star2"></div>
+          <div class="star star3"></div>
+          <div class="star star4"></div>
+          <div class="star star5"></div>
         </div>
-      </div>
-      <!-- Mobile Menu -->
-      <div class="hidden md:hidden bg-mobile-menu w-full absolute top-16 left-0" id="mobile-menu">
-        <div class="flex flex-col items-center space-y-4 py-4 nav-text">
-          <a href="#about" class="hover:underline">About</a>
-          <a href="#achievements" class="hover:underline">Achievements</a>
-          <a href="#projects" class="hover:underline">Projects</a>
-          <a href="#skills" class="hover:underline">Skills</a>
-          <a href="#resume" class="hover:underline">Resume</a>
-          <a href="#contact" class="hover:underline">Contact</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="h-screen flex flex-col justify-center items-center text-center relative" id="hero">
-      <canvas id="circuit-canvas" class="absolute inset-0 -z-5"></canvas>
-      <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl hero-title font-bold mb-4 animate-fade-in">Hi, I’m MANOJ M</h2>
-      <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl hero-subtitle mb-8 animate-fade-in-delay">MERN Developer | Coder | Electronics Engineer </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-  <a href="#projects" class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay">View My Work</a>
-  <a href="assets/resume_MANOJ_M.pdf" class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay" download>Download My Resume</a>
-      </div>
-
-      <div class="logos-slideshow">
-        <div class="logos">
-          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" data-title="Git & GitHub">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code" data-title="VS Code">
-          <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face" data-title="Hugging Face">
-          <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-title="Node.js">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" data-title="Express.js" style="background:#fff; border-radius:8px; padding:2px;">
-          <img src="https://www.mongodb.com/assets/images/global/leaf.png" alt="MongoDB" data-title="MongoDB">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" data-title="React">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" data-title="JavaScript">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" data-title="Java" style="background:#fff; border-radius:8px; padding:2px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" data-title="Python">
-          <!-- Duplicates for seamless scroll -->
-          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" data-title="Git & GitHub">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code" data-title="VS Code">
-          <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face" data-title="Hugging Face">
-          <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-title="Node.js">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" data-title="Express.js" style="background:#fff; border-radius:8px; padding:2px;">
-          <img src="https://www.mongodb.com/assets/images/global/leaf.png" alt="MongoDB" data-title="MongoDB">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" data-title="React">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" data-title="JavaScript">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" data-title="Java" style="background:#fff; border-radius:8px; padding:2px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" data-title="Python">
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
-      <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
-        <div class="card">
-          <div class="image">
-            <img src="./assets/MANOJ.jpg" alt="Profile Image of Manoj" loading="lazy" />
-          </div>
-          <div class="content">
-            <h3>Hi! 👋</h3>
-            <p>I'm Manoj, an ECE student who loves tech, coding, and building things.</p>
-            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});" class="contact-button">Contact Me</button>
-          </div>
-        </div>
-        <div class="flex-1">
-          <h3 class="text-2xl sm:text-3xl section-title mb-4">About Me</h3>
-          <p class="max-w-2xl sm:max-w-3xl lg:max-w-4xl section-subtitle leading-relaxed text-sm sm:text-base">
-            I’m an Electronics & Communication Engineering student passionate about embedded systems, drones, robotics, and software development. My mission is to create innovative tech solutions that solve real-world problems. When I’m not coding or tinkering with circuits, you’ll find me exploring the latest advancements in AI and IoT.
-          </p>
-        </div>
-      </div>
-    </section>
-
-   
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
-      <div class="container mx-auto">
-        <h3 class="text-2xl sm:text-3xl section-title font-bold mb-6">Projects</h3>
-        <div class="projects-container">
-          <div class="glow-button">
-            <div class="glow-border">
-              <div class="project-content">
-                <div class="project-icon">🧠</div>
-                <h4>BCI-Controlled Car Game</h4>
-                <p>A brain-computer interface (BCI) game using EEG sensor data to control a car based on user focus and mental activity.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="glow-button">
-            <div class="glow-border">
-              <div class="project-content">
-                <div class="project-icon">🌱</div>
-                <h4>Yellow Shade Plant Disease Detection</h4>
-                <p>A real-time plant health monitoring tool using HSV color filtering to detect yellow pigmentation via webcam feed.</p>
-                <div class="project-links">
-                  <a href="https://buildbymanoj-plant-disease-prediction.hf.space/" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                  <span class="link-divider">|</span>
-                  <a href="https://github.com/buildbymanoj/Yellow-Shade-Based-Plant-Disease-Detection-using-OpenCV" target="_blank">
-                    <i class="fab fa-github"></i> View on GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="glow-button">
-            <div class="glow-border">
-              <div class="project-content">
-                <div class="project-icon">🤖</div>
-                <h4>BuildbyManoj-chatbot | AI Assistant</h4>
-                <p>Flask-powered AI assistant with live web search for real-time, context-aware answers. Tech Stack: Python, Flask, Web Scraping, Render</p>
-                <div class="project-links">
-                  <a href="https://buildbymanoj-chatbot.onrender.com/" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                  <span class="link-divider">|</span>
-                  <a href="https://github.com/buildbymanoj/BuildbyManoj-chatbot" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="glow-button">
-            <div class="glow-border">
-              <div class="project-content">
-                <div class="project-icon">🥗</div>
-                <h4>NutritionTracker | Full-Stack Web App</h4>
-                <p>MERN stack app for tracking and analyzing daily nutrition. Tech Stack: MongoDB, Express.js, React, Node.js, HTML/CSS</p>
-                <div class="project-links">
-                  <a href="https://nutrify-two.vercel.app/" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                  <span class="link-divider">|</span>
-                  <a href="https://github.com/buildbymanoj/Nutrify" target="_blank">
-                    <i class="fab fa-github"></i> View on GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
-      <div class="container mx-auto">
-        <h3 class="text-2xl sm:text-3xl section-title mb-6">Skills</h3>
-        <div class="skill-cards">
-          <div class="three-d-wrapper">
-            <div class="skill-card programming animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Logo" class="skill-logo">
-                <p>C</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card programming animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Logo" class="skill-logo">
-                <p>Java</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card programming animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
-                <p>Python</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card frontend animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo" class="skill-logo">
-                <p>React</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card frontend animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo" class="skill-logo">
-                <p>JavaScript</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card frontend animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML Logo" class="skill-logo">
-                <p>HTML</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card frontend animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo" class="skill-logo">
-                <p>CSS</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card backend animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js Logo" class="skill-logo">
-                <p>Node.js</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card backend animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js Logo" class="skill-logo" style="background: #fff; border-radius: 50%;">
-                <p>Express.js</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card backend animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB Logo" class="skill-logo">
-                <p>MongoDB</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card aiml animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
-                <p>OpenCV</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card aiml animated">
-              <div class="card-content">
-                <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face Logo" class="skill-logo">
-                <p>Hugging Face</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card design animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma Logo" class="skill-logo">
-                <p>Figma</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card design animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva Logo" class="skill-logo">
-                <p>Canva</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card tools animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo" class="skill-logo">
-                <p>Git & GitHub</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card tools animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code Logo" class="skill-logo">
-                <p>VS Code</p>
-              </div>
-            </div>
-          </div>
-          <div class="three-d-wrapper">
-            <div class="skill-card tools animated">
-              <div class="card-content">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker Logo" class="skill-logo docker-logo">
-                <p>Docker</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-     <!-- Achievements Section -->
-    <section id="achievements" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
-      <div class="container mx-auto">
-        <h3 class="text-2xl sm:text-3xl section-title mb-6">Achievements</h3>
-        <div class="achievements-container">
-          <div class="glow-button">
-            <div class="glow-border">
-              <div class="project-content">
-                <div class="project-icon">🏆</div>
-                <h4>Competitions & Hackathons</h4>
-                <div class="achievement-list">
-                  <div class="achievement-item">
-                    <i class="fas fa-trophy card-icon"></i>
-                    <span>2nd place in Drone Rescue Challenge at TechnoXian 2024</span>
-                  </div>
-                  <div class="achievement-item">
-                    <i class="fas fa-trophy card-icon"></i>
-                    <span>2nd place in Texas Instruments MSP430 Mentored Hackathon 2024</span>
-                  </div>
-                  <div class="achievement-item">
-                    <i class="fas fa-trophy card-icon"></i>
-                    <span>1st place in Project Expo 2024</span>
-                  </div>
-                  <div class="achievement-item">
-                    <i class="fas fa-trophy card-icon"></i>
-                    <span>3rd place at Code Wars: The Rise of Automation, a 12-hour hackathon</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="glow-button">
-            <div class="glow-border">
-              <div class="project-content">
-                <div class="project-icon">👥</div>
-                <h4>Event Organization & Participation</h4>
-                <div class="achievement-list">
-                  <div class="achievement-item">
-                    <i class="fas fa-users-cog card-icon"></i>
-                    <span>Coordinated the Circuit Hunt event during the college symposium</span>
-                  </div>
-                  <div class="achievement-item">
-                    <i class="fas fa-users-cog card-icon"></i>
-                    <span>Organized the Micro Mania event for second-year students</span>
-                  </div>
-                  <div class="achievement-item">
-                    <i class="fas fa-rocket card-icon"></i>
-                    <span>Participated in Flipkart GRiD 6.0</span>
-                  </div>
-                  <div class="achievement-item">
-                    <i class="fas fa-robot card-icon"></i>
-                    <span>Participated in e-Yantra Robotics Competition by IIT Bombay</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-
-    <!-- Contact -->
-    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 text-center relative">
-      <canvas id="microchip-canvas" class="absolute inset-0 -z-5"></canvas>
-      <div class="container mx-auto relative z-10">
-        <h3 class="text-2xl sm:text-3xl section-title mb-4">Contact Me</h3>
-        <p class="mb-4 section-subtitle text-sm sm:text-base">Let’s connect! Drop me a message below.</p>
-        <form action="https://formspree.io/f/mblyzapv" method="POST" class="max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
-          <div class="mb-4">
-            <input type="text" name="name" placeholder="Your Name" required class="form-input w-full p-3 rounded-lg focus:outline-none"/>
-          </div>
-          <div class="mb-4">
-            <input type="email" name="email" placeholder="Your Email" required class="form-input w-full p-3 rounded-lg focus:outline-none"/>
-          </div>
-          <div class="mb-4">
-            <textarea name="message" placeholder="Your Message" required class="form-input w-full p-3 rounded-lg focus:outline-none" rows="5"></textarea>
-          </div>
-          <button type="submit" class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Send Message</button>
-        </form>
-        <div class="flex justify-center space-x-4 sm:space-x-6 mt-6">
-          <a href="https://www.linkedin.com/in/manoj-m-53621829a/" target="_blank" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
-          <a href="https://github.com/buildbymanoj" target="_blank"aria-label="GitHub" class="social-icon"><i class="fab fa-github fa-2x"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center py-4 sm:py-6">
-      <div class="container mx-auto">
-        <p>© 2025 MANOJ M. All rights reserved.</p>
-        <p class="disclaimer">Designed & Created by <b class="author-name">Manoj M</b></p>
-      </div>
-    </footer>
-
-    <!-- Toast container for sarcastic light-mode confirmation -->
-    <div id="sarcastic-toast" class="sarcastic-toast" aria-live="polite" role="status" style="display:none;">
-      <div class="sarcastic-toast-inner">
-        <strong>Are you really a dev?</strong>
-        <p>Switching to light mode... brave choice. </p>
+      </label>
+      <button class="md:hidden nav-text focus:outline-none" id="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      <div class="hidden md:flex space-x-6 lg:space-x-8 nav-text" id="nav-links">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#skills" class="hover:underline">Skills</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#achievements" class="hover:underline">Achievements</a>
+        <a href="#contact" class="hover:underline">Contact</a>
       </div>
     </div>
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden bg-mobile-menu w-full absolute top-16 left-0" id="mobile-menu">
+      <div class="flex flex-col items-center space-y-4 py-4 nav-text">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#achievements" class="hover:underline">Achievements</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#skills" class="hover:underline">Skills</a>
+        <a href="#resume" class="hover:underline">Resume</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Scripts: Deferred for non-blocking load -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-    <script src="script.js" defer></script>
-  </body>
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col justify-center items-center text-center relative" id="hero">
+    <canvas id="circuit-canvas" class="absolute inset-0 -z-5"></canvas>
+    <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl hero-title font-bold mb-4 animate-fade-in">Hi, I’m MANOJ M
+    </h2>
+    <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl hero-subtitle mb-8 animate-fade-in-delay">MERN Developer |
+      Coder | Electronics Engineer </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="#projects"
+        class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay">View
+        My Work</a>
+      <a href="assets/resume_MANOJ_M.pdf"
+        class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition animate-fade-in-delay"
+        download>Download My Resume</a>
+    </div>
+
+    <div class="logos-slideshow">
+      <div class="logos">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"
+          data-title="Git & GitHub">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code"
+          data-title="VS Code">
+        <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face"
+          data-title="Hugging Face">
+        <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-title="Node.js">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js"
+          data-title="Express.js" style="background:#fff; border-radius:8px; padding:2px;">
+        <img src="https://www.mongodb.com/assets/images/global/leaf.png" alt="MongoDB" data-title="MongoDB">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" data-title="React">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript"
+          data-title="JavaScript">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+          data-title="Java" style="background:#fff; border-radius:8px; padding:2px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"
+          data-title="Python">
+        <!-- Duplicates for seamless scroll -->
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"
+          data-title="Git & GitHub">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code"
+          data-title="VS Code">
+        <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face"
+          data-title="Hugging Face">
+        <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-title="Node.js">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js"
+          data-title="Express.js" style="background:#fff; border-radius:8px; padding:2px;">
+        <img src="https://www.mongodb.com/assets/images/global/leaf.png" alt="MongoDB" data-title="MongoDB">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" data-title="React">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript"
+          data-title="JavaScript">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+          data-title="Java" style="background:#fff; border-radius:8px; padding:2px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"
+          data-title="Python">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
+      <div class="card">
+        <div class="image">
+          <img src="./assets/MANOJ.jpg" alt="Profile Image of Manoj" loading="lazy" />
+        </div>
+        <div class="content">
+          <h3>Hi! 👋</h3>
+          <p>I'm Manoj, an ECE student who loves tech, coding, and building things.</p>
+          <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});"
+            class="contact-button">Contact Me</button>
+        </div>
+      </div>
+      <div class="flex-1">
+        <h3 class="text-2xl sm:text-3xl section-title mb-4">About Me</h3>
+        <p class="max-w-2xl sm:max-w-3xl lg:max-w-4xl section-subtitle leading-relaxed text-sm sm:text-base">
+          I’m an Electronics & Communication Engineering student passionate about embedded systems, drones, robotics,
+          and software development. My mission is to create innovative tech solutions that solve real-world problems.
+          When I’m not coding or tinkering with circuits, you’ll find me exploring the latest advancements in AI and
+          IoT.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
+    <div class="container mx-auto">
+      <h3 class="text-2xl sm:text-3xl section-title font-bold mb-6">Projects</h3>
+      <div class="projects-container">
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">🧠</div>
+              <h4>BCI-Controlled Car Game</h4>
+              <p>A brain-computer interface (BCI) game using EEG sensor data to control a car based on user focus and
+                mental activity.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">🌱</div>
+              <h4>Yellow Shade Plant Disease Detection</h4>
+              <p>A real-time plant health monitoring tool using HSV color filtering to detect yellow pigmentation via
+                webcam feed.</p>
+              <div class="project-links">
+                <a href="https://buildbymanoj-plant-disease-prediction.hf.space/" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <span class="link-divider">|</span>
+                <a href="https://github.com/buildbymanoj/Yellow-Shade-Based-Plant-Disease-Detection-using-OpenCV"
+                  target="_blank">
+                  <i class="fab fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">🤖</div>
+              <h4>BuildbyManoj-chatbot | AI Assistant</h4>
+              <p>Flask-powered AI assistant with live web search for real-time, context-aware answers. Tech Stack:
+                Python, Flask, Web Scraping, Render</p>
+              <div class="project-links">
+                <a href="https://buildbymanoj-chatbot.onrender.com/" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <span class="link-divider">|</span>
+                <a href="https://github.com/buildbymanoj/BuildbyManoj-chatbot" target="_blank">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">🥗</div>
+              <h4>NutritionTracker | Full-Stack Web App</h4>
+              <p>MERN stack app for tracking and analyzing daily nutrition. Tech Stack: MongoDB, Express.js, React,
+                Node.js, HTML/CSS</p>
+              <div class="project-links">
+                <a href="https://nutrify-two.vercel.app/" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <span class="link-divider">|</span>
+                <a href="https://github.com/buildbymanoj/Nutrify" target="_blank">
+                  <i class="fab fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
+    <div class="container mx-auto">
+      <h3 class="text-2xl sm:text-3xl section-title mb-6">Skills</h3>
+      <div class="skill-cards">
+        <div class="three-d-wrapper">
+          <div class="skill-card programming animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Logo"
+                class="skill-logo">
+              <p>C</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card programming animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Logo"
+                class="skill-logo">
+              <p>Java</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card programming animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo"
+                class="skill-logo">
+              <p>Python</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card frontend animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo"
+                class="skill-logo">
+              <p>React</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card frontend animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript Logo" class="skill-logo">
+              <p>JavaScript</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card frontend animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML Logo"
+                class="skill-logo">
+              <p>HTML</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card frontend animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo"
+                class="skill-logo">
+              <p>CSS</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card backend animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="Node.js Logo" class="skill-logo">
+              <p>Node.js</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card backend animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                alt="Express.js Logo" class="skill-logo" style="background: #fff; border-radius: 50%;">
+              <p>Express.js</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card backend animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                alt="MongoDB Logo" class="skill-logo">
+              <p>MongoDB</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card aiml animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV Logo"
+                class="skill-logo">
+              <p>OpenCV</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card aiml animated">
+            <div class="card-content">
+              <img src="https://huggingface.co/front/assets/huggingface_logo.svg" alt="Hugging Face Logo"
+                class="skill-logo">
+              <p>Hugging Face</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card design animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma Logo"
+                class="skill-logo">
+              <p>Figma</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card design animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva Logo"
+                class="skill-logo">
+              <p>Canva</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card tools animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo"
+                class="skill-logo">
+              <p>Git & GitHub</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card tools animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                alt="VS Code Logo" class="skill-logo">
+              <p>VS Code</p>
+            </div>
+          </div>
+        </div>
+        <div class="three-d-wrapper">
+          <div class="skill-card tools animated">
+            <div class="card-content">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker Logo"
+                class="skill-logo docker-logo">
+              <p>Docker</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
+    <div class="container mx-auto">
+      <h3 class="text-2xl sm:text-3xl section-title font-bold mb-6">Services</h3>
+      <p class="section-subtitle mb-6">I offer a range of services across web development, embedded systems, and UI/UX
+        design. Select below to learn more.</p>
+      <div class="services-container">
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">💻</div>
+              <h4>Full Stack Development</h4>
+              <p>Modern MERN applications, REST APIs, responsive UIs, and deployment to cloud platforms (Vercel,
+                Render).</p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">🎨</div>
+              <h4>UI & UX Design</h4>
+              <p>User-centric design, wireframing, prototyping, and creating intuitive interfaces with Figma and other
+                tools.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">🔌</div>
+              <h4>Embedded and IoT</h4>
+              <p>Firmware, sensor integration, microcontroller projects (MSP430, AVR, ESP32) and IoT data pipelines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32">
+    <div class="container mx-auto">
+      <h3 class="text-2xl sm:text-3xl section-title mb-6">Achievements</h3>
+      <div class="achievements-container">
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">🏆</div>
+              <h4>Competitions & Hackathons</h4>
+              <div class="achievement-list">
+                <div class="achievement-item">
+                  <i class="fas fa-trophy card-icon"></i>
+                  <span>2nd place in Drone Rescue Challenge at TechnoXian 2024</span>
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-trophy card-icon"></i>
+                  <span>2nd place in Texas Instruments MSP430 Mentored Hackathon 2024</span>
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-trophy card-icon"></i>
+                  <span>1st place in Project Expo 2024</span>
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-trophy card-icon"></i>
+                  <span>3rd place at Code Wars: The Rise of Automation, a 12-hour hackathon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glow-button">
+          <div class="glow-border">
+            <div class="project-content">
+              <div class="project-icon">👥</div>
+              <h4>Event Organization & Participation</h4>
+              <div class="achievement-list">
+                <div class="achievement-item">
+                  <i class="fas fa-users-cog card-icon"></i>
+                  <span>Coordinated the Circuit Hunt event during the college symposium</span>
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-users-cog card-icon"></i>
+                  <span>Organized the Micro Mania event for second-year students</span>
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-rocket card-icon"></i>
+                  <span>Participated in Flipkart GRiD 6.0</span>
+                </div>
+                <div class="achievement-item">
+                  <i class="fas fa-robot card-icon"></i>
+                  <span>Participated in e-Yantra Robotics Competition by IIT Bombay</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 md:px-20 lg:px-32 text-center relative">
+    <canvas id="microchip-canvas" class="absolute inset-0 -z-5"></canvas>
+    <div class="container mx-auto relative z-10">
+      <h3 class="text-2xl sm:text-3xl section-title mb-4">Contact Me</h3>
+      <p class="mb-4 section-subtitle text-sm sm:text-base">Let’s connect! Drop me a message below.</p>
+      <form action="https://formspree.io/f/mblyzapv" method="POST" class="max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
+        <div class="mb-4">
+          <input type="text" name="name" placeholder="Your Name" required
+            class="form-input w-full p-3 rounded-lg focus:outline-none" />
+        </div>
+        <div class="mb-4">
+          <input type="email" name="email" placeholder="Your Email" required
+            class="form-input w-full p-3 rounded-lg focus:outline-none" />
+        </div>
+        <div class="mb-4">
+          <textarea name="message" placeholder="Your Message" required
+            class="form-input w-full p-3 rounded-lg focus:outline-none" rows="5"></textarea>
+        </div>
+        <button type="submit"
+          class="hero-button bg-yellow-400 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Send
+          Message</button>
+      </form>
+      <div class="flex justify-center space-x-4 sm:space-x-6 mt-6">
+        <a href="https://www.linkedin.com/in/manoj-m-53621829a/" target="_blank" aria-label="LinkedIn"
+          class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://github.com/buildbymanoj" target="_blank" aria-label="GitHub" class="social-icon"><i
+            class="fab fa-github fa-2x"></i></a>
+        <a href="mailto:manojmahendran555@gmail.com" aria-label="Email" class="social-icon"><i
+            class="fas fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="mt-6">
+        <p class="section-subtitle text-sm sm:text-base">manojmahendran555@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 sm:py-6">
+    <div class="container mx-auto">
+      <p>© 2025 MANOJ M. All rights reserved.</p>
+      <p class="disclaimer">Designed & Created by <b class="author-name">Manoj M</b></p>
+    </div>
+  </footer>
+
+  <!-- Toast container for sarcastic light-mode confirmation -->
+  <div id="sarcastic-toast" class="sarcastic-toast" aria-live="polite" role="status" style="display:none;">
+    <div class="sarcastic-toast-inner">
+      <strong>Are you really a dev?</strong>
+      <p>Switching to light mode... brave choice. </p>
+    </div>
+  </div>
+
+  <!-- Scripts: Deferred for non-blocking load -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+
 </html>
